@@ -1,0 +1,12 @@
+{
+  "name": "aa-node-cli-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "aa": "./bin/aa.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
