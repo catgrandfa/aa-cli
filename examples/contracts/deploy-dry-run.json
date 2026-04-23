@@ -1,0 +1,12 @@
+{
+  "actions": [
+    {
+      "type": "replace_binary",
+      "platform": "darwin-arm64",
+      "current_version": "0.1.0",
+      "target_version": "0.2.0"
+    }
+  ],
+  "risk_tier": "high",
+  "requires_approval": true
+}

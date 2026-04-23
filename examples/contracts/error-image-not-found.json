@@ -1,0 +1,11 @@
+{
+  "error": {
+    "code": "image_not_found",
+    "message": "Image 'foo' does not exist in local registry",
+    "input": {
+      "image": "foo"
+    },
+    "retryable": false,
+    "suggestion": "Run 'aa image list --json' to see available images"
+  }
+}

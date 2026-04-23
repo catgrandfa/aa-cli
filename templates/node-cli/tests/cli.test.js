@@ -30,6 +30,38 @@ test("aa list users --json returns a structured list", () => {
   ]);
 });
 
+test("aa list users accepts --json-input payloads", () => {
+  const cliPath = resolve("bin/aa.js");
+  const result = spawnSync(
+    process.execPath,
+    [cliPath, "list", "users", '--json-input={"role":"admin"}', "--json"],
+    {
+      cwd: resolve("."),
+      encoding: "utf8",
+    },
+  );
+
+  assert.equal(result.status, 0);
+  assert.deepEqual(JSON.parse(result.stdout), [
+    { name: "Alice", email: "alice@co.com", role: "admin" },
+  ]);
+});
+
+test("aa list users applies --fields and --limit to structured output", () => {
+  const cliPath = resolve("bin/aa.js");
+  const result = spawnSync(
+    process.execPath,
+    [cliPath, "list", "users", "--json", "--fields=name", "--limit=1"],
+    {
+      cwd: resolve("."),
+      encoding: "utf8",
+    },
+  );
+
+  assert.equal(result.status, 0);
+  assert.deepEqual(JSON.parse(result.stdout), [{ name: "Alice" }]);
+});
+
 test("aa doctor --json reports source runtime capabilities", () => {
   const cliPath = resolve("bin/aa.js");
   const result = spawnSync(process.execPath, [cliPath, "doctor", "--json"], {

@@ -1,0 +1,8 @@
+{
+  "name": "aa",
+  "current_version": "0.1.0",
+  "latest_version": "0.2.0",
+  "update_available": true,
+  "platform": "darwin-arm64",
+  "notes_url": "https://example.com/releases/v0.2.0"
+}
